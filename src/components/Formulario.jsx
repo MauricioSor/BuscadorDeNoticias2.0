@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ListaNoticias from './ListaNoticias';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-
+import '../App.css'
 const Formulario = () => {
     const [noticia, setNoticia] = useState([]);
     const tomaDeDatos = (e) => {
@@ -24,7 +24,6 @@ const Formulario = () => {
             }
             const consulta = await fetch(url);
             const dato = await consulta.json();
-            console.log('soy el dato', dato);
             const datoArray = Object.values(dato);
             setNoticia(datoArray);
         } catch (error) {
@@ -33,25 +32,24 @@ const Formulario = () => {
 
     }
     useEffect(() => {
-        console.log('soy useEfect');
         consultaDeAPI();
     }, []);
     return (
         <div className='container border my-3'>
             <div className='container  d-flex justify-content-center my-3'>
-                <h3>Refinar busqueda</h3>
+                <h3 id='tituloBusqueda' className='align-self-center'>Refinar Busqueda</h3>
                 <div>
-                    <Form onSubmit={tomaDeDatos}>
-                        <Form.Select aria-label="Default select example">
-                            <option value='general'>Todas</option>
+                    <Form onSubmit={tomaDeDatos} className='d-flex'>
+                        <Form.Select aria-label="Select de categoria" className='my-2 mx-2'>
+                            <option value='general'>Ingrese Categoria...</option>
                             <option value="health">Salud</option>
                             <option value="business">Negocios</option>
                             <option value="science">Ciencia</option>
                             <option value="sports">Deporte</option>
                             <option value="technology">Tecnolgia</option>
                         </Form.Select>
-                        <Form.Select aria-label="Default select example">
-                            <option value='us'>Todas</option>
+                        <Form.Select aria-label="Select de pais" className='my-2 mx-2'>
+                            <option value='us'>Ingrese Pais...</option>
                             <option value="ar">Argentina</option>
                             <option value="cn">China</option>
                             <option value="us">Estados Unidos</option>

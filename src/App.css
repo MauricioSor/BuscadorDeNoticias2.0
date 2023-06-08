@@ -1,5 +1,4 @@
 
-
 .main {
   flex-grow: 1;
 }
@@ -14,7 +13,27 @@
 	display: flex;
 	flex-direction: column;
 }
+#tituloBusqueda{
+    font-family: monospace;
+    font-size: 60px;
+    background: linear-gradient(90deg, black,rgb(43, 43, 43),rgb(81, 81, 81),rgb(255, 255, 255),rgb(15, 46, 131),rgb(57, 81, 178),rgb(45, 63, 167));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:text 5s infinite;
+}
+@keyframes text{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+	50%{
+        filter:hue-rotate(360deg);
+    }
+    100%{
+        filter:hue-rotate(360deg);
+    }
 
+}
 @keyframes cambiar {
 	0% {
 		background-position: 0 50%;
