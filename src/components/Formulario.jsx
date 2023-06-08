@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ListaNoticias from './ListaNoticias';
 import Form from 'react-bootstrap/Form';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import '../App.css'
 const Formulario = () => {
     const [noticia, setNoticia] = useState([]);
@@ -36,7 +36,7 @@ const Formulario = () => {
     }, []);
     return (
         <div className='container border my-3'>
-            <div className='container  d-flex justify-content-center my-3'>
+            <Container fluid className=' d-flex justify-content-center my-3'>
                 <h3 id='tituloBusqueda' className='align-self-center'>Refinar Busqueda</h3>
                 <div>
                     <Form onSubmit={tomaDeDatos} className='d-flex'>
@@ -58,7 +58,7 @@ const Formulario = () => {
                         <Button variant='primary' type='submit'>Buscar</Button>
                     </Form>
                 </div>
-            </div>
+            </Container>
             <ListaNoticias noticia={noticia}></ListaNoticias>
         </div>
     );
