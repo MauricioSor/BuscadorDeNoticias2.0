@@ -16,11 +16,11 @@ const Formulario = () => {
             let url = '';
             if (categoria && categoria !== 'general'|| pais && pais !== 'us') {
             
-                url = `https://newsapi.org/v2/top-headlines?category=${categoria}&country=${pais}&apiKey=1b0e0dea605e49b2a2093ff503a3c236`;            
+                url = `https://newsdata.io/api/1/news?apikey=pub_24074bc4b36bc5fc96f3342bf4006ed1ffc3c&category=${categoria}&country=${pais}`;            
             
             }
             else{
-                url = 'https://newsapi.org/v2/top-headlines?q=travel&apiKey=1b0e0dea605e49b2a2093ff503a3c236';
+                url = 'https://newsdata.io/api/1/news?apikey=pub_24074bc4b36bc5fc96f3342bf4006ed1ffc3c&country=us';
             }
             const consulta = await fetch(url);
             const dato = await consulta.json();
@@ -53,7 +53,7 @@ const Formulario = () => {
                         <Form.Select aria-label="Default select example">
                             <option value='us'>Todas</option>
                             <option value="ar">Argentina</option>
-                            <option value="ch">China</option>
+                            <option value="cn">China</option>
                             <option value="us">Estados Unidos</option>
                             <option value="mx">Mexico</option>
                         </Form.Select>
