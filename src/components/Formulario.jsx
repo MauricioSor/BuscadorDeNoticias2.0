@@ -14,13 +14,12 @@ const Formulario = () => {
     const consultaDeAPI = async (categoria, pais) => {
         try {
             let url = '';
-            if (categoria && categoria !== 'Todas') {
-                if (pais && pais !== 'Todas') {
-                    url = `https://newsapi.org/v2/top-headlines?category=${categoria}&country=${pais}&apiKey=1b0e0dea605e49b2a2093ff503a3c236`;
-                } else {
-                    url = `https://newsapi.org/v2/top-headlines?category=${categoria}&apiKey=1b0e0dea605e49b2a2093ff503a3c236`;
-                }
-            }else{
+            if (categoria && categoria !== 'general'|| pais && pais !== 'us') {
+            
+                url = `https://newsapi.org/v2/top-headlines?category=${categoria}&country=${pais}&apiKey=1b0e0dea605e49b2a2093ff503a3c236`;            
+            
+            }
+            else{
                 url = 'https://newsapi.org/v2/top-headlines?q=travel&apiKey=1b0e0dea605e49b2a2093ff503a3c236';
             }
             const consulta = await fetch(url);
@@ -44,7 +43,7 @@ const Formulario = () => {
                 <div>
                     <Form onSubmit={tomaDeDatos}>
                         <Form.Select aria-label="Default select example">
-                            <option>Todas</option>
+                            <option value='general'>Todas</option>
                             <option value="health">Salud</option>
                             <option value="business">Negocios</option>
                             <option value="science">Ciencia</option>
