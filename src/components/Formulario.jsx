@@ -14,7 +14,7 @@ const Formulario = () => {
     const consultaDeAPI = async (categoria, pais) => {
         try {
             let url = '';
-            if (categoria && categoria !== 'general'|| pais && pais !== 'us') {
+            if ((categoria && categoria !== 'general') || (pais && pais !== 'us')) {
             
                 url = `https://newsdata.io/api/1/news?apikey=pub_24074bc4b36bc5fc96f3342bf4006ed1ffc3c&category=${categoria}&country=${pais}`;            
             
