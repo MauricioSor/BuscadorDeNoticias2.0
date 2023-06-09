@@ -11,7 +11,6 @@ const Noticias = ({ noticia }) => {
                         <Card className='mx-1 border-info border-3' key={posicion} style={{ width: '18rem'}}>
                             <Card.Img variant="top" src={noticia.image_url} style={{height:'10rem', width:'16rem'}} alt={'Imagen de '+noticia.title} className='mt-1' />
                             <Card.Body>
-                            <Card.Img variant="top" src={noticia.urlToImage} />
                                 <Card.Title>{noticia.title}</Card.Title>
                                 <Card.Text className='text-truncate'>{noticia.description}</Card.Text>
                                 <Card.Footer>

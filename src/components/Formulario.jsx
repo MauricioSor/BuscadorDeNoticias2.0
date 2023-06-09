@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ListaNoticias from './ListaNoticias';
 import Form from 'react-bootstrap/Form';
 import { Button, Container } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
 import '../App.css'
 const Formulario = () => {
     const [noticia, setNoticia] = useState([]);
@@ -36,8 +37,8 @@ const Formulario = () => {
     }, []);
     return (
         <div className='container border my-3'>
-            <Container fluid className=' d-flex justify-content-center my-3'>
-                <h3 id='tituloBusqueda' className='align-self-center'>Refinar Busqueda</h3>
+            <Container fluid className=' my-3'>
+                <h3 id='tituloBusqueda' className='align-self-center text-center'>Refinar Busqueda</h3>
                 <div>
                     <Form onSubmit={tomaDeDatos} className='d-flex'>
                         <Form.Select aria-label="Select de categoria" className='my-2 mx-2'>
