@@ -13,7 +13,8 @@
 - HTML
 
 ## API Documentation 
-- [Weather API](https://openweathermap.org/api)
+- [NewsData](https://newsdata.io/) 
+
 
 ## Please . If you like this project give me a star to know it 🌟🤩 
 ## Thanks!! 
